@@ -1,0 +1,22 @@
+import random
+
+caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%"
+
+while True:
+
+    longitud = int(input("Ingrese la longitud de la contraseña (8-20): "))
+
+    while longitud < 8 or longitud > 20:
+        longitud = int(input("Longitud inválida. Ingrese entre 8 y 20: "))
+
+    contraseña = ""
+
+    for i in range(longitud):
+        contraseña = contraseña + random.choice(caracteres)
+
+    print("Contraseña generada:", contraseña)
+
+    otra = input("¿Desea generar otra contraseña? (s/n): ")
+
+    if otra == "n":
+        break
